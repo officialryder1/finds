@@ -19,7 +19,7 @@
 
     let showModel = $state(false)
     const whatsappNumber = "2349033147769"
-    const companyName = "Made in Aba"
+    const companyName = "FindsNg"
 
     function openWhatsappOrder() {
       // Message to be sent

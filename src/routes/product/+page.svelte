@@ -8,6 +8,7 @@
   import { page } from '$app/stores';
   import { pushState } from '$app/navigation';
   import { goto } from '$app/navigation';
+  import { generateBreadcrumbSchema } from '$lib/seo.js';
   
   // State management
   let selectedCategory = $state("all");
@@ -15,6 +16,10 @@
   let categories = $state([]);
   let loading = $state(true);
   let filteredProducts = $state([]);
+  let seo = $state([])
+  let breadcrumbSchema = $state([])
+
+  let{ data } = $props()
 
   // Fetch products and categories from Supabase
   onMount(async () => {
@@ -140,7 +145,30 @@
     
   });
  
+ $effect(() => {
+  seo = {
+    title: 'FindsNg - Premium Nigerian Fashion & Traditional Wear',
+    description: 'Discover authentic Nigerian fashion including Ankara dresses, Aso-Oke outfits, and traditional wear. Handcrafted quality from Aba, Nigeria. Free shipping across Nigeria.',
+    image: 'https://findsng.vercel.app/og-image.jpg',
+  };
+ })
+ $effect(() => {
+  breadcrumbSchema = generateBreadcrumbSchema($page.url.pathname, [
+    { name: 'Home', item: '/' },
+    { name: 'Products', item: '/products' }
+  ]);
+ })
 </script>
+
+<svelte:head>
+  <title>{seo.title}</title>
+  <meta name="description" content={seo.description} />
+  
+  <!-- Structured Data for Breadcrumbs -->
+  <script type="application/ld+json">
+    {JSON.stringify(breadcrumbSchema)}
+  </script>
+</svelte:head>
 
 <div class="min-h-screen">
   <main>

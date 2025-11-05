@@ -6,6 +6,7 @@
   import { ShoppingCart, Heart, Share2, ArrowLeft, Star, Truck, Shield, RotateCcw } from '@lucide/svelte';
   import Button from '$lib/components/ui/button/button.svelte';
   import ProductCard from '$lib/components/ProductCard.svelte';
+  import { generateProductSchema, generateBreadcrumbSchema } from '$lib/seo.js';
 
   let product = $state<any>(null);
   let relatedProducts = $state<any[]>([]);
@@ -14,9 +15,12 @@
   let error = $state('');
   let selectedImageIndex = $state(0);
   let quantity = $state(1);
+  let productSchema = $state([])
+  let breadcrumbSchema = $state([])
+  let seo = $state([])
 
   const whatsappNumber = "2349033147769";
-  const companyName = "Made in Aba";
+  const companyName = "FindsNg";
 
   onMount(async () => {
     await Promise.all([fetchProduct(), fetchCategories()]);
@@ -146,7 +150,50 @@
       productImages = product.image_path ? [getImageUrl(product.image_path)] : [];
     }
   });
+  $effect(() => {
+    productSchema = product ? generateProductSchema(product, categories) : null;
+  })
+  $effect(() => {
+    breadcrumbSchema = generateBreadcrumbSchema($page.url.pathname, [
+      { name: 'Home', item: '/' },
+      { name: 'Products', item: '/products' },
+      { name: product?.title || 'Product', item: `/products/${product?.id}` }
+    ]);
+  })
+  $effect(() => {
+    seo = product ? {
+      title: `${product.title} - FindsNg | ₦${product.price?.toLocaleString()}`,
+      description: product.description || `Buy ${product.title} - Premium Nigerian fashion from FindsNg. Price: ₦${product.price?.toLocaleString()}.`,
+      image: getImageUrl(product.image_path),
+      canonical: `https://findsng.vercel.app/product/${product.id}`
+    } : {
+      title: 'Product Not Found - FindsNg',
+      description: 'Product not found. Browse our Nigerian fashion collection.'
+    };
+  })
 </script>
+
+<svelte:head>
+  <title>{seo.title}</title>
+  <meta name="description" content={seo.description} />
+  
+  <!-- Product Structured Data -->
+  {#if productSchema}
+    <script type="application/ld+json">
+      {JSON.stringify(productSchema)}
+    </script>
+  {/if}
+  
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+    {JSON.stringify(breadcrumbSchema)}
+  </script>
+  
+  <!-- Additional product meta tags -->
+  <meta property="product:price:amount" content={product?.price} />
+  <meta property="product:price:currency" content="NGN" />
+  <meta property="product:availability" content={product?.stock_quantity > 0 ? 'in stock' : 'out of stock'} />
+</svelte:head>
 
 <div class="min-h-screen bg-background">
   <!-- Loading State -->

@@ -5,10 +5,11 @@
     import Canvas from "$lib/components/Canvas.svelte";
     import { onMount } from "svelte";
     import { fade } from "svelte/transition";
-    
 
-
+    let { data } = $props()    
     let visible = $state(true)
+    let seo = $state([])
+
     onMount(() => {
         setTimeout (() => {
             visible = false
@@ -16,7 +17,24 @@
     }
     )
 
+    $effect(() => {
+        seo = {
+            title: 'FindsNg - Premium Nigerian Fashion & Traditional Wear',
+            description: 'Discover authentic Nigerian fashion including Ankara dresses, Aso-Oke outfits, and traditional wear. Handcrafted quality from Aba, Nigeria. Free shipping across Nigeria.',
+            image: 'https://findsng.vercel.app/og-image.jpg',
+            canonical: 'https://findsng.vercel.app'
+        };
+    })
+
 </script>
+
+<svelte:head>
+  <title>{seo.title}</title>
+  <meta name="description" content={seo.description} />
+  <meta property="og:title" content={seo.title} />
+  <meta property="og:description" content={seo.description} />
+  <meta property="og:image" content={seo.image} />
+</svelte:head>
 
 {#if visible}
     <Canvas />

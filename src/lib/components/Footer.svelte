@@ -9,7 +9,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 class="font-display text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Made in 9ja
+              FindsNg
             </h3>
             <p class="text-secondary-foreground/80 text-sm">
               Celebrating Nigerian heritage through authentic native wear, 
@@ -54,7 +54,7 @@
         </div>
 
         <div class="border-t border-secondary-foreground/20 pt-8 text-center text-sm text-secondary-foreground/60">
-          <p>&copy; {date.getFullYear()} Made in 9ja. All rights reserved.</p>
+          <p>&copy; {date.getFullYear()} FindsNg. All rights reserved.</p>
         </div>
       </div>
 </footer>

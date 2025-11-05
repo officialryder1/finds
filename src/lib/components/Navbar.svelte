@@ -11,7 +11,7 @@
             </Button>
             
             <h1 class="font-display text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              <a href="/">Made in 9ja</a>
+              <a href="/">FindsNg</a>
             </h1>
 
             <div class="hidden md:flex items-center gap-6">
