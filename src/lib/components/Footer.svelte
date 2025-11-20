@@ -9,11 +9,10 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 class="font-display text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              FindsNg
+              finds.ng
             </h3>
             <p class="text-secondary-foreground/80 text-sm">
-              Celebrating Nigerian heritage through authentic native wear, 
-              crafted with pride and excellence.
+              Premium Vintage Meets Elevated StreetWears=.
             </p>
           </div>
 
@@ -54,7 +53,7 @@
         </div>
 
         <div class="border-t border-secondary-foreground/20 pt-8 text-center text-sm text-secondary-foreground/60">
-          <p>&copy; {date.getFullYear()} FindsNg. All rights reserved.</p>
+          <p>&copy; {date.getFullYear()} finds.ng. All rights reserved.</p>
         </div>
       </div>
 </footer>

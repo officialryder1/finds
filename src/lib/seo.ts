@@ -12,7 +12,7 @@ export function generateProductSchema(product, categories) {
     "sku": product.id,
     "brand": {
       "@type": "Brand",
-      "name": "FindsNg"
+      "name": "finds.ng"
     },
     "offers": {
       "@type": "Offer",
@@ -23,7 +23,7 @@ export function generateProductSchema(product, categories) {
         "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "seller": {
         "@type": "Organization",
-        "name": "FindsNg"
+        "name": "finds.ng"
       }
     },
     "category": category?.name || "Fashion"
@@ -38,7 +38,7 @@ export function generateBreadcrumbSchema(path, items) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": `https://findsng.vercel.app${item.item}`
+      "item": `https://finds.ng.vercel.app${item.item}`
     }))
   };
   
@@ -49,11 +49,11 @@ export function generateWebsiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "FindsNg",
-    "url": "https://findsng.vercel.app",
+    "name": "finds.ng",
+    "url": "https://finds.ng.vercel.app",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://findsng.vercel.app/product?search={search_term_string}",
+      "target": "https://finds.ng.vercel.app/product?search={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };

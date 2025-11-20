@@ -20,7 +20,7 @@
   let seo = $state([])
 
   const whatsappNumber = "2349033147769";
-  const companyName = "FindsNg";
+  const companyName = "finds.ng";
 
   onMount(async () => {
     await Promise.all([fetchProduct(), fetchCategories()]);
@@ -162,12 +162,12 @@
   })
   $effect(() => {
     seo = product ? {
-      title: `${product.title} - FindsNg | ₦${product.price?.toLocaleString()}`,
-      description: product.description || `Buy ${product.title} - Premium Nigerian fashion from FindsNg. Price: ₦${product.price?.toLocaleString()}.`,
+      title: `${product.title} - finds.ng | ₦${product.price?.toLocaleString()}`,
+      description: product.description || `Buy ${product.title} - Premium Nigerian fashion from finds.ng. Price: ₦${product.price?.toLocaleString()}.`,
       image: getImageUrl(product.image_path),
-      canonical: `https://findsng.vercel.app/product/${product.id}`
+      canonical: `https://finds.ng.vercel.app/product/${product.id}`
     } : {
-      title: 'Product Not Found - FindsNg',
+      title: 'Product Not Found - finds.ng',
       description: 'Product not found. Browse our Nigerian fashion collection.'
     };
   })

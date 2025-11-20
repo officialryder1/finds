@@ -10,51 +10,43 @@ export interface ProductType {
     image: string;
     title: string;
     price: string;
-    category: string;
+    categories: string;
+    description: string;
+    stock_quantity: number;
+    is_new?: boolean;
+    store_name: string;
+    store_slug: string;
+    whatsapp_number: string;
+    id: string;
 }
 
 export let Product: ProductType[] = [];
 
 
-// export const Product = [
-//      {
-//             image: ankaraDress,
-//             title: "Elegant Ankara Dress",
-//             price: "₦45,000",
-//             category: "Ankara",
-//         },
-//         {
-//             image: asoOke,
-//             title: "Traditional Aso-Oke Set",
-//             price: "₦85,000",
-//             category: "Aso-Oke",
-//         },
-//         {
-//             image: kaftan,
-//             title: "Modern Kaftan",
-//             price: "₦38,000",
-//             category: "Kaftan",
-//         },
-//         {
-//             image: wrapperSet,
-//             title: "Wrapper & Blouse Set",
-//             price: "₦52,000",
-//             category: "Wrapper",
-//         },
-// ]
-
 async function fetchProducts() {
     const query = supabase
       .from('products')
-      .select('*')
+      .select(`
+        *,
+        stores (
+          name,
+          slug,
+          whatsapp_number
+        ),
+        categories (*)
+        `)
+      .eq('is_active', true)
       .order('created_at', { ascending: false })
+      .limit(12);
 
 
     const { data, error } = await query
 
     if (!error) {
       Product = data
+      console.log('Products fetched successfully:', Product);
     }
+    
 }
 await fetchProducts()
 console.log(Product);

@@ -3,9 +3,9 @@ export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "FindsNg",
+    "name": "finds.ng",
     "description": "Premium Nigerian fashion and traditional wear store",
-    "url": "https://findsng.vercel.app",
+    "url": "https://finds.ng.vercel.app",
     "telephone": "+234-903-314-7769",
     "address": {
       "@type": "PostalAddress",

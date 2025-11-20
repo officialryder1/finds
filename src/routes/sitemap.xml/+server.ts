@@ -1,7 +1,7 @@
 import { supabase } from '$lib/supabaseClient';
 
 export async function GET() {
-  const baseUrl = 'https://findsng.vercal.app';
+  const baseUrl = 'https://finds.ng.vercal.app';
   
   // Fetch all active products
   const { data: products } = await supabase

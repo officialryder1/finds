@@ -19,10 +19,10 @@
 
     $effect(() => {
         seo = {
-            title: 'FindsNg - Premium Nigerian Fashion & Traditional Wear',
+            title: 'finds.ng - Premium Nigerian Fashion & Traditional Wear',
             description: 'Discover authentic Nigerian fashion including Ankara dresses, Aso-Oke outfits, and traditional wear. Handcrafted quality from Aba, Nigeria. Free shipping across Nigeria.',
-            image: 'https://findsng.vercel.app/og-image.jpg',
-            canonical: 'https://findsng.vercel.app'
+            image: 'https://finds.ng.vercel.app/og-image.jpg',
+            canonical: 'https://finds.ng.vercel.app'
         };
     })
 

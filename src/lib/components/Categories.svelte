@@ -47,7 +47,7 @@
         Shop by Category
       </h2>
       <p class="text-lg text-muted-foreground">
-        Explore our diverse collection of authentic Nigerian fashion
+        Explore our diverse collection.
       </p>
     </div>
 

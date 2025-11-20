@@ -65,25 +65,24 @@
             </div>
             
             <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Authentic
+              Discover Amazing
               <span class="block bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-                Nigerian
+                Products
               </span>
-              Products
+              Shop directly from verified Nigerian vendors.
             </h1>
             
             <p class="text-lg md:text-xl text-muted-foreground max-w-lg">
-              Celebrate your heritage with premium Product. Crafted with pride in Nigeria, 
-              where culture meets contemporary elegance.
+              Reviving the best vintage streetwear - rare finds, ionic labels, and timeless dilhouettes and make them accessible to the modern Nigerian.
             </p>
 
             <div class="flex flex-wrap gap-4">
               <Button size="lg" class="group text-white dark:text-black" onclick={() => window.location.href='/product'}>
-                Shop Collection
+                Shop Now
                 <ArrowRight class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="lg" variant="outline">
-                Our Story
+              <Button size="lg" variant="outline" onclick={() => window.location.href="/become-a-vendor"}>
+                Sell Your Products
               </Button>
             </div>
 
