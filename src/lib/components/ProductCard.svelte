@@ -13,6 +13,7 @@
         image_path: string;
         title: string;
         price: string;
+        category: string;
         categories: string;
         description: string;
         stock_quantity: number;
@@ -20,7 +21,7 @@
     }
     
     const { 
-        id, image_path, title, price, categories, description, 
+        id, image_path, title, price, category, categories, description, 
         stock_quantity, is_new = false
     }: ProductCardProps = $props();
 
@@ -100,7 +101,7 @@ Thank you!`;
             
             <!-- Category Badge -->
             <span class="absolute top-4 left-4 bg-primary text-white font-semibold text-xs px-3 py-1 rounded-full shadow-lg">
-                {categories.name}
+                {category}
             </span>
             
             <!-- New Badge -->

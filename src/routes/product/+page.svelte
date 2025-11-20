@@ -114,9 +114,9 @@
     const category = categories.find(c => c.id === product.category_id);
     return {
       id: product.id,
-      image: product.image_path,
+      image_path: product.image_path,
       title: product.title,
-      price: `₦${product.price?.toLocaleString()}`,
+      price: product.price,
       category: getCategoryName(product.category_id),
       categoryColor: getCategoryColor(product.category_id),
       description: product.description,
@@ -146,13 +146,6 @@
   });
  
  $effect(() => {
-  seo = {
-    title: 'finds.ng - Premium Nigerian Fashion & Traditional Wear',
-    description: 'Discover authentic Nigerian fashion including Ankara dresses, Aso-Oke outfits, and traditional wear. Handcrafted quality from Aba, Nigeria. Free shipping across Nigeria.',
-    image: 'https://finds.ng.vercel.app/og-image.jpg',
-  };
- })
- $effect(() => {
   breadcrumbSchema = generateBreadcrumbSchema($page.url.pathname, [
     { name: 'Home', item: '/' },
     { name: 'Products', item: '/products' }
@@ -161,8 +154,8 @@
 </script>
 
 <svelte:head>
-  <title>{seo.title}</title>
-  <meta name="description" content={seo.description} />
+  <title>finds.ng - Premium Nigerian Fashion & Traditional Wear</title>
+  <meta name="description" content="Discover authentic Nigerian fashion including Ankara dresses, Aso-Oke outfits, and traditional wear. Handcrafted quality from Aba, Nigeria. Free shipping across Nigeria." />
   
   <!-- Structured Data for Breadcrumbs -->
   <script type="application/ld+json">
