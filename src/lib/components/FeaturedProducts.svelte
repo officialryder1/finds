@@ -34,9 +34,9 @@
         <div class="text-center py-12">
           <Store class="w-16 h-16 text-muted-foreground mx-auto mb-4" />
           <h3 class="text-xl font-semibold mb-2">No Products Yet</h3>
-          <p class="text-muted-foreground mb-6">Be the first to add your products!</p>
-          <Button href="/become-a-vendor">
-            Become a Vendor
+          <p class="text-muted-foreground mb-6">No Products has been added yet!</p>
+          <Button href="/">
+            Come back later
           </Button>
         </div>
       {:else}

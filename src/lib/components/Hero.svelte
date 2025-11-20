@@ -1,11 +1,10 @@
 <script>
     import Button from "./ui/button/button.svelte";
     import { ArrowRight } from "@lucide/svelte";
-    import heroImage from "$lib/assets/hero-native-wear.jpg";
+    import heroImage from "$lib/assets/vintage.avif";
     import { tweened } from 'svelte/motion';
 	  import { cubicOut } from "svelte/easing";
     import { onMount } from "svelte";
-    import { supabase } from "$lib/supabaseClient";
     import NewsLetterModel from "$lib/components/NewsLetterModel.svelte";
     import { fade } from "svelte/transition"
 
@@ -65,11 +64,11 @@
             </div>
             
             <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Discover Amazing
+              Premium Vintage
               <span class="block bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-                Products
+                Meets
               </span>
-              Shop directly from verified Nigerian vendors.
+              Elegant Streetwear.
             </h1>
             
             <p class="text-lg md:text-xl text-muted-foreground max-w-lg">
@@ -82,7 +81,7 @@
                 <ArrowRight class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline" onclick={() => window.location.href="/become-a-vendor"}>
-                Sell Your Products
+                About us
               </Button>
             </div>
 

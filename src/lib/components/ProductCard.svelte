@@ -5,6 +5,9 @@
     import CardContent from "./ui/card/card-content.svelte";
     import { getImageUrl } from "$lib/getImageUrl";
 
+    let whatsapp_number = '09038016263'
+    let store_name = "Finds.ng"
+
     interface ProductCardProps {
         id: string;
         image_path: string;
@@ -14,15 +17,11 @@
         description: string;
         stock_quantity: number;
         is_new?: boolean;
-        store_name?: string;
-        store_slug?: string;
-        whatsapp_number?: string;
     }
     
     const { 
         id, image_path, title, price, categories, description, 
-        stock_quantity, is_new = false, store_name = "Vendor",
-        store_slug = "", whatsapp_number = ""
+        stock_quantity, is_new = false
     }: ProductCardProps = $props();
 
     let showModal = $state(false);

@@ -12,7 +12,7 @@
               finds.ng
             </h3>
             <p class="text-secondary-foreground/80 text-sm">
-              Premium Vintage Meets Elevated StreetWears=.
+              Premium Vintage Meets Elevated StreetWears 💗.
             </p>
           </div>
 

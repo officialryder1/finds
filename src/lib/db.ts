@@ -14,9 +14,6 @@ export interface ProductType {
     description: string;
     stock_quantity: number;
     is_new?: boolean;
-    store_name: string;
-    store_slug: string;
-    whatsapp_number: string;
     id: string;
 }
 
@@ -28,11 +25,6 @@ async function fetchProducts() {
       .from('products')
       .select(`
         *,
-        stores (
-          name,
-          slug,
-          whatsapp_number
-        ),
         categories (*)
         `)
       .eq('is_active', true)
