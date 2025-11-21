@@ -5,10 +5,8 @@
     import Canvas from "$lib/components/Canvas.svelte";
     import { onMount } from "svelte";
     import { fade } from "svelte/transition";
-
-    let { data } = $props()    
+  
     let visible = $state(true)
-    let seo = $state([])
 
     onMount(() => {
         setTimeout (() => {
@@ -17,23 +15,14 @@
     }
     )
 
-    $effect(() => {
-        seo = {
-            title: 'finds.ng - Premium Nigerian Fashion & Traditional Wear',
-            description: 'Discover authentic Nigerian fashion including Ankara dresses, Aso-Oke outfits, and traditional wear. Handcrafted quality from Aba, Nigeria. Free shipping across Nigeria.',
-            image: 'https://finds.ng.vercel.app/og-image.jpg',
-            canonical: 'https://finds.ng.vercel.app'
-        };
-    })
-
 </script>
 
 <svelte:head>
-  <title>{seo.title}</title>
-  <meta name="description" content={seo.description} />
-  <meta property="og:title" content={seo.title} />
-  <meta property="og:description" content={seo.description} />
-  <meta property="og:image" content={seo.image} />
+  <title>finds.ng - Premium Nigerian Fashion & Traditional Wear</title>
+  <meta name="description" content="Discover authentic Nigerian fashion including Ankara dresses, Aso-Oke outfits, and traditional wear. Handcrafted quality from Aba, Nigeria. Free shipping across Nigeria." />
+  <meta property="og:title" content="finds.ng - Premium Nigerian Fashion & Traditional Wear" />
+  <meta property="og:description" content="'Discover authentic Nigerian fashion including Ankara dresses, Aso-Oke outfits, and traditional wear. Handcrafted quality from Aba, Nigeria. Free shipping across Nigeria"/>
+  <meta property="og:image" content="https://finds.ng.vercel.app/og-image.jpg" />
 </svelte:head>
 
 {#if visible}

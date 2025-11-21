@@ -110,7 +110,7 @@
   }
 
   async function deleteCategory(id) {
-    if (confirm('Are you sure you want to delete this category? Products in this category will lose their category assignment.')) {
+    if (confirm(`Are you sure you want to delete this category? Products in this category will lose their category assignment.`)) {
       const { error } = await supabase
         .from('categories')
         .delete()
